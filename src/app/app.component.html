@@ -1,0 +1,10 @@
+<ng-cotainer *ngFor="let page of pages2">
+    <button (click)="pageClick(page.link)" *ngIf="page.subPages.length == 0" mat-button>{{page.pageTitle}}</button>
+    <ng-conatiner *ngIf="page.subPages.length > 0">
+      <button  mat-button [matMenuTriggerFor]="aboveMenu">{{page.pageTitle}}</button>
+      <mat-menu #aboveMenu="matMenu" yPosition="above" >
+        <button (click)="pageClick(item.link)" *ngFor="let item of page.subPages" mat-menu-item>{{item.pageTitle}}</button>
+      </mat-menu>
+    </ng-conatiner>
+    </ng-cotainer>
+<router-outlet></router-outlet>
