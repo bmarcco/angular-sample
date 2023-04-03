@@ -25,6 +25,11 @@ export class AppComponent {
         link:"about"
       }
     ]
+  },
+  {
+    pageTitle: 'Kontakt',
+    link: 'contact',
+    subPages:[]
   }]
 
   pageClick(item){

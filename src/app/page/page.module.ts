@@ -9,6 +9,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { PortalModule } from '@angular/cdk/portal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatMenuModule,
     PortalModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   exports: [
     CommonModule,
@@ -31,7 +36,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatMenuModule,
     PortalModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
 })
 export class PageModule { }

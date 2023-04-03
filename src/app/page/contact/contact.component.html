@@ -1,0 +1,28 @@
+<div style="width: 50%; margin: 0 auto;">
+<h2>Kontakt forma</h2>
+<form [formGroup]="contactForm">
+<mat-form-field appearance="outline" style="width: 100%;">
+<mat-label>
+    Naslov
+</mat-label>
+<input matInput placeholder="Naslov" formControlName ="title" required>
+</mat-form-field>
+
+<mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>
+        Email
+    </mat-label>
+    <input matInput placeholder="Email" formControlName ="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>
+            Tekst poruke
+        </mat-label>
+        <textarea matInput placeholder="Tekst poruke" formControlName ="text">
+
+        </textarea>
+        </mat-form-field>
+</form>
+<button mat-button (click)="save()">Sačuvaj</button>
+</div>
