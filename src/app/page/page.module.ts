@@ -15,13 +15,16 @@ import {HttpClientModule} from '@angular/common/http'
 import {MatTableModule} from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { LoginComponent } from './login/login.component';
+import { AvatarModule } from 'ngx-avatar';
 
 @NgModule({
   declarations: [
     HomeComponent,
     AboutComponent,
     PriceComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +39,8 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    AvatarModule
   ],
   exports: [
     CommonModule,
@@ -51,7 +55,8 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    AvatarModule
   ],
 })
 export class PageModule { }

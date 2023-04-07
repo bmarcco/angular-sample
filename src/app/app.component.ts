@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,17 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'first-project';
+  url = "";
 
-  constructor(private router:Router) { }
+  constructor(private router:Router) {
+    this.router.events.subscribe(event =>{
+      if(event instanceof NavigationStart)
+      {
+        this.url = event.url;
+        console.log(this.url);
+      }
+    })
+   }
 
   public pages2= [{
     pageTitle: 'Početna',
