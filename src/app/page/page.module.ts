@@ -18,6 +18,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { LoginComponent } from './login/login.component';
 import { AvatarModule } from 'ngx-avatar';
 import { UsersComponent } from './users/users.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { UsersComponent } from './users/users.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    AvatarModule
+    AvatarModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     CommonModule,
@@ -58,7 +64,9 @@ import { UsersComponent } from './users/users.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    AvatarModule
+    AvatarModule,
+    MatSelectModule,
+    MatDatepickerModule
   ],
 })
 export class PageModule { }

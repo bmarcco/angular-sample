@@ -35,6 +35,40 @@
                 </mat-label>
                 <input matInput placeholder="Ponovi lozinku" formControlName="confirmPassword" type="password">
             </mat-form-field>
+            <div formArrayName="applicationItems">
+
+                <div class="row" *ngFor="let fa of userForm.get('applicationItems')['controls']; let i = index" [formGroupName]="i">
+                    <mat-form-field appearance="outline" style="width: 100%;" class="col-3">
+                        <mat-label>
+                            Tehnologija
+                        </mat-label>
+                        <mat-select formControlName="nazivTehnologije" required>
+                            <mat-option *ngFor="let tehnologija of listaTehnologija" [value]="tehnologija.id">
+                                    {{tehnologija.naziv}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-3">
+                        <mat-label>
+                            Naziv aplikacije
+                        </mat-label>
+                        <input matInput placeholder="Naziv aplikacije" formControlName="nazivAplikacije" required>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Datum aplikacije</mat-label>
+                        <input matInput [matDatepicker]="dp2" formControlName="datumAplikacije">
+                        <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+                        <mat-datepicker #dp2></mat-datepicker>
+                      </mat-form-field>
+        
+                    
+                    <button type="button" (click) ="removeFormGroup(i)">Obriši</button>
+                </div>
+
+                <button type="button" (click) ="addFormGroup()">Dodaj</button>
+            </div>
         </form>
         <button mat-button (click)="save()">Sačuvaj</button>
     </div>
